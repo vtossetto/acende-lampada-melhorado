@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Teste Javascript</title>
+        <meta charset="utf-8"/>
+        
+    </head>
+    <body>
+        <h1 id="info">Acenda a Lâmpada</h1>
+        <img src= "_imagens/lampada-apagada.jpg" id="luz"/>
+    
+        <script>
+            const lampada = document.getElementById('luz')
+            const info = document.getElementById('info')
+            
+            lampada.addEventListener('mouseenter', acendeLampada)
+            lampada.addEventListener('mouseleave', apagaLampada)
+            lampada.addEventListener('click', quebraLampada)
+            
+            function acendeLampada() {
+                lampada.src="_imagens/lampada-acesa.jpg";
+                info.innerHTML = 'Quebre a Lâmpada'
+            }
+            function apagaLampada() {
+                lampada.src="_imagens/lampada-apagada.jpg";
+                info.innerHTML = 'Acenda a Lâmpada'
+            }
+            function quebraLampada() {
+                lampada.src="_imagens/lampada-quebrada.jpg";
+            }
+        </script>
+    </body>
+</html>
