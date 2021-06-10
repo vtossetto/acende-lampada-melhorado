@@ -2,16 +2,14 @@
 <html lang="pt-br">
     <head>
         <title>Acende Lâmpada</title>
-        <meta charset="utf-8"/>
-        
+        <meta charset="utf-8"/>        
     </head>
     <body>
         <h1 id="info">Acenda a Lâmpada</h1>
         <img src= "_imagens/lampada-apagada.jpg" id="luz"/>
-    
-        
+           
         <script>
-            // projeto de teste do curso de HTML5 - melhorado, usando eventos apenas no javascript
+            // projeto de teste do curso de HTML5 - usando eventos apenas no javascript
             const lampada = document.getElementById('luz')
             const info = document.getElementById('info')
             
@@ -19,16 +17,21 @@
             lampada.addEventListener('mouseleave', apagaLampada)
             lampada.addEventListener('click', quebraLampada)
             
+            let quebrada = false;
+
             function acendeLampada() {
+                if (quebrada) return
                 lampada.src="_imagens/lampada-acesa.jpg";
                 info.innerHTML = 'Quebre a Lâmpada'
             }
             function apagaLampada() {
+                if (quebrada) return
                 lampada.src="_imagens/lampada-apagada.jpg";
                 info.innerHTML = 'Acenda a Lâmpada'
             }
             function quebraLampada() {
                 lampada.src="_imagens/lampada-quebrada.jpg";
+                quebrada = true;
             }
         </script>
     </body>
